@@ -11,4 +11,4 @@ Controller: 接收請求, 處理業務邏輯
 
 # install django 5.2.1
 
-![alt text](image-1.png)
+![alt text](image-2.png)
