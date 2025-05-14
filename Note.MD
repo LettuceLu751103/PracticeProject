@@ -12,3 +12,8 @@ Controller: 接收請求, 處理業務邏輯
 # install django 5.0.3
 
 ![alt text](image-2.png)
+
+# 啟動 django 服務
+python.exe .\manage.py runserver
+
+![alt text](image-3.png)
