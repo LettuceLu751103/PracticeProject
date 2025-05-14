@@ -9,6 +9,6 @@ View: 生成頁面 html 相關
 
 Controller: 接收請求, 處理業務邏輯
 
-# install django 5.2.1
+# install django 5.0.3
 
 ![alt text](image-2.png)
