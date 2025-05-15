@@ -17,3 +17,8 @@ Controller: 接收請求, 處理業務邏輯
 python.exe .\manage.py runserver
 
 ![alt text](image-3.png)
+
+# 渲染模板
+
+![alt text](image-4.png)
+
