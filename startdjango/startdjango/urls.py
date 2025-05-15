@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from book import views
 
 urlpatterns = [
@@ -23,5 +23,7 @@ urlpatterns = [
     # get 傳送參數方法 1, 傳統傳參
     path('bookinfo/', views.book_detail),
     # get 傳送參數方法 2, 直接接在URL後方
-    path('bookinfo2/<int:book_id>', views.book_detail2)
+    path('bookinfo2/<int:book_id>', views.book_detail2),
+
+    path('movie/', include('movie.urls'))
 ]
