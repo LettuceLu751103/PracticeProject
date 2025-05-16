@@ -4,3 +4,7 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, "index.html")
+
+
+def baidu(request):
+    return render(request, 'baidu.html')

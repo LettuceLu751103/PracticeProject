@@ -26,5 +26,6 @@ urlpatterns = [
     path('bookinfo2/<int:book_id>', views.book_detail2),
 
     path('movie/', include('movie.urls')),
-    path('', homeview.index)
+    path('', homeview.index),
+    path('baidu', homeview.baidu)
 ]
