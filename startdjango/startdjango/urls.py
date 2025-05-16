@@ -27,5 +27,6 @@ urlpatterns = [
 
     path('movie/', include('movie.urls')),
     path('', homeview.index),
-    path('baidu', homeview.baidu)
+    path('baidu', homeview.baidu),
+    path('bookinfo3/', homeview.bookinfo)
 ]
