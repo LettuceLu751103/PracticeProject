@@ -1,0 +1,1 @@
+alert("我是來自 static 中的 javascript 文件!!!")

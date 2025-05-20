@@ -31,4 +31,6 @@ urlpatterns = [
     path('bookinfo3/', homeview.bookinfo),
 
     path('xyzindex/', views.xyzindex),
+
+    path('static', views.static)
 ]

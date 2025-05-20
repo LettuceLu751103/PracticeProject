@@ -24,3 +24,7 @@ def xyzindex(request):
         ]
     }
     return render(request, 'xyz_index.html', context=context)
+
+def static(request):
+
+    return render(request, 'static.html')

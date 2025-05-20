@@ -22,3 +22,7 @@ python.exe .\manage.py runserver
 
 ![alt text](image-4.png)
 
+# 安裝MySQL 8.0
+# 安裝 Navicat
+# 安裝 pymysql
+PS C:\Users\user\Desktop\GitHub\PracticeProject\startdjango> pip install pymysql
