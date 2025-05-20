@@ -24,5 +24,11 @@ python.exe .\manage.py runserver
 
 # 安裝MySQL 8.0
 # 安裝 Navicat
-# 安裝 pymysql
+# 安裝 pymysql & mysqlclient
 PS C:\Users\user\Desktop\GitHub\PracticeProject\startdjango> pip install pymysql
+PS C:\Users\user\Desktop\GitHub\PracticeProject\startdjango> pip install mysqlclient
+# 新建數據庫
+
+![alt text](image-5.png)
+
+# 設定 setting.py 中的 DATABASES

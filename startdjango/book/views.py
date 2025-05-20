@@ -1,5 +1,8 @@
 from django.shortcuts import render, HttpResponse
 
+# 使用 django 封裝好的 connection 對象, 會自動讀取 settings.py 中數據庫的配置訊息
+from django.db import connection
+
 # Create your views here.
 
 def book_detail(request):
@@ -26,5 +29,17 @@ def xyzindex(request):
     return render(request, 'xyz_index.html', context=context)
 
 def static(request):
-
     return render(request, 'static.html')
+
+def bookindex(request):
+    # 獲取游標對象
+    cursor = connection.cursor()
+    # 拿到游標對象後執行sql語句
+    cursor.execute("select * from book")
+    # 獲取所有數據
+    rows = cursor.fetchall()
+    # 遍歷查詢到的數據
+    for row in rows:
+        print(row)
+    
+    return HttpResponse('連接 mysql, 查找數據成功!!!')

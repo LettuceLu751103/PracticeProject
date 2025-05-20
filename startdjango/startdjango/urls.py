@@ -16,21 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from book import views
+from book import views as bookview
 from home import views as homeview
 urlpatterns = [
     path('admin/', admin.site.urls),
     # get 傳送參數方法 1, 傳統傳參
-    path('bookinfo/', views.book_detail),
+    path('bookinfo/', bookview.book_detail),
     # get 傳送參數方法 2, 直接接在URL後方
-    path('bookinfo2/<int:book_id>', views.book_detail2),
+    path('bookinfo2/<int:book_id>', bookview.book_detail2),
 
     path('movie/', include('movie.urls')),
     path('', homeview.index),
     path('baidu', homeview.baidu),
     path('bookinfo3/', homeview.bookinfo),
 
-    path('xyzindex/', views.xyzindex),
+    path('xyzindex/', bookview.xyzindex),
 
-    path('static', views.static)
+    path('static', bookview.static),
+    path('bookindex', bookview.bookindex)
 ]
