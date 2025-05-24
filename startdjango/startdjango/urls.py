@@ -16,18 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from book import views as bookview
-from home import views as homeview
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    # get 傳送參數方法 1, 傳統傳參
-    path('bookinfo/', bookview.book_detail),
-    # get 傳送參數方法 2, 直接接在URL後方
-    path('bookinfo2/<int:book_id>', bookview.book_detail2),
 
+urlpatterns = [
+    # 後台 route
+    path('admin/', admin.site.urls),
+    # app movie route 
     path('movie/', include('movie.urls')),
-    path('', homeview.index),
-    path('baidu', homeview.baidu),
-    path('bookinfo3/', homeview.bookinfo),
-    path('book/', include('book.urls'))
+    # app home route
+    path('home/', include('home.urls')),
+    # app book route
+    path('book/', include('book.urls')),
+    
 ]
