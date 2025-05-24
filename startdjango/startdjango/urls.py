@@ -33,5 +33,6 @@ urlpatterns = [
     path('xyzindex/', bookview.xyzindex),
 
     path('static', bookview.static),
-    path('bookindex', bookview.bookindex)
+    path('bookindex', bookview.bookindex),
+    path('add_book', bookview.add_book)
 ]

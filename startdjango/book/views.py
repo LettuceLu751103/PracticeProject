@@ -3,6 +3,9 @@ from django.shortcuts import render, HttpResponse
 # 使用 django 封裝好的 connection 對象, 會自動讀取 settings.py 中數據庫的配置訊息
 from django.db import connection
 
+# 導入 Book model
+from .models import Book
+
 # Create your views here.
 
 def book_detail(request):
@@ -43,3 +46,11 @@ def bookindex(request):
         print(row)
     
     return HttpResponse('連接 mysql, 查找數據成功!!!')
+
+def add_book(request):
+    book = Book(name='三國演義', author='羅貫中', price='230.0')
+    print(book.name, book.author, book.price)
+    book.save()
+    return HttpResponse('圖書插入成功')
+
+
