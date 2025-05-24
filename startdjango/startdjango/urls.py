@@ -29,11 +29,5 @@ urlpatterns = [
     path('', homeview.index),
     path('baidu', homeview.baidu),
     path('bookinfo3/', homeview.bookinfo),
-
-    path('xyzindex/', bookview.xyzindex),
-
-    path('static', bookview.static),
-    path('bookindex', bookview.bookindex),
-    path('add_book', bookview.add_book),
-    path('query_book', bookview.query_book)
+    path('book/', include('book.urls'))
 ]
