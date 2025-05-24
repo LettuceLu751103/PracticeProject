@@ -32,3 +32,7 @@ PS C:\Users\user\Desktop\GitHub\PracticeProject\startdjango> pip install mysqlcl
 ![alt text](image-5.png)
 
 # 設定 setting.py 中的 DATABASES
+
+# 創建後來用戶
+
+![alt text](image-6.png)
