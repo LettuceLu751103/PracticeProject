@@ -34,5 +34,6 @@ urlpatterns = [
 
     path('static', bookview.static),
     path('bookindex', bookview.bookindex),
-    path('add_book', bookview.add_book)
+    path('add_book', bookview.add_book),
+    path('query_book', bookview.query_book)
 ]

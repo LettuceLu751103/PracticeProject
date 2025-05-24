@@ -53,4 +53,13 @@ def add_book(request):
     book.save()
     return HttpResponse('圖書插入成功')
 
+def query_book(request):
+    # books = Book.objects.all()
+    # books = Book.objects.filter(name='四國演義')
+    books = Book.objects.order_by('pub_time')
+    for book in books:
+        print(book.name, book.author, book.price, book.pub_time)
+
+    return HttpResponse('圖書查找成功')
+
 
