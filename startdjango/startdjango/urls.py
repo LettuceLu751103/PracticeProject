@@ -26,5 +26,6 @@ urlpatterns = [
     path('home/', include('home.urls')),
     # app book route
     path('book/', include('book.urls')),
-    
+    # app bookstore route
+    path('bookstore/', include('bookstore.urls'))
 ]
