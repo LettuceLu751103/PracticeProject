@@ -36,3 +36,7 @@ PS C:\Users\user\Desktop\GitHub\PracticeProject\startdjango> pip install mysqlcl
 # 創建後來用戶
 
 ![alt text](image-6.png)
+
+# admin 後台註冊 models
+
+![alt text](image-7.png)
