@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     # 首頁
-    path('', views.index),
+    path('index/', views.index),
+    path('<int:tvno>/', views.index),
     path('getbooks/', views.getbooks)
 ]
