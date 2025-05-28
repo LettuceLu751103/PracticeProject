@@ -10,3 +10,9 @@ def index(request):
 def login(request):
 
     return render(request, 'login.html', locals())
+
+
+# 註冊的視圖函數
+def register(request):
+
+    return render(request, 'register.html')
