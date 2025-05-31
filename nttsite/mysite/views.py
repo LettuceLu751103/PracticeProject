@@ -16,6 +16,9 @@ def index(request):
 
 # 登入頁面的視圖函數
 def login(request):
+    request.session['user_id'] = 'Lettuce'
+    print(request.COOKIES.items())
+    request.session.set_expiry(0)
     return render(request, "login.html", locals())
 
 
