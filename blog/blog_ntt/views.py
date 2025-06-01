@@ -8,3 +8,8 @@ def index(request):
 def blog_detail(request):
 
     return render(request, 'blog_ntt/blog_detail.html')
+
+
+def pub_blog(request):
+
+    return render(request, 'blog_ntt/pub_blog.html')
