@@ -1,0 +1,40 @@
+{% extends 'base_auth.html'%}
+{% block title %} Register {% endblock %}
+{% block main %}
+
+<div style="width: 330px;" class="m-auto">
+    <h1>註冊</h1>
+    <form action="register" method="post">
+
+        <div class="mt-2">
+            <label for="username">用戶名</label>
+            <input type="text" class="form-control" name="username" id="email" placeholder="請輸入郵箱">
+        </div>
+        <div class="mt-2">
+            <label for="email">郵箱</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="請輸入郵箱">
+        </div>
+        <div class="mt-2">
+            <label for="password">密碼</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="請輸入密碼">
+        </div>
+        <div class="mt-2">
+            <label for="confirm">確認密碼</label>
+            <input type="password" class="form-control" name="confirm" id="confirm" placeholder="確認密碼">
+        </div>
+        <div class="mt-2">
+            <div class="input-group my-3">
+                <label for="code"></label>
+                <input type="text" class="form-control" name="code" id="code" placeholder="驗證碼">
+                <button class="btn btn-outline-secondary" type="button">獲取驗證碼</button>
+            </div>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary w-100">立即註冊</button>
+        </div>
+</div>
+</form>
+
+</div>
+
+{% endblock %}
