@@ -13,3 +13,4 @@ def blog_detail(request):
 def pub_blog(request):
 
     return render(request, 'blog_ntt/pub_blog.html')
+
