@@ -13,6 +13,9 @@ import string
 # 隨機取樣
 import random
 
+# 引入 captcha model
+from .models import CaptchaModel
+
 # Create your views here.
 
 
@@ -36,13 +39,14 @@ def send_test_email(request):
         try:
             subject = "測試郵件主題"
             # ramdom.sample() 針對 0-9, 取6位數字變成陣列, 用 join() 拼接成字串
-            number_code = "".join(random.sample(string.digits, 6))
-            message = f"這是一封來自 Django 應用程式的測試郵件, 驗證碼為 {number_code}"
+            captcha = "".join(random.sample(string.digits, 6))
+            CaptchaModel.objects.update_or_create(email=email, defaults={'captcha':captcha})
+            message = f"這是一封來自 Django 應用程式的測試郵件, 驗證碼為 {captcha}"
             from_email = settings.DEFAULT_FROM_EMAIL
             recipient_list = [email]
             send_mail(subject, message, from_email, recipient_list, fail_silently=False)
             return JsonResponse(
-                {"code": 200, "message": "郵件發送成功", "number_code": number_code}
+                {"code": 200, "message": "郵件發送成功", "number_code": captcha}
             )
         except Exception as e:
             return HttpResponse(f"郵件發送失敗: {e}")
