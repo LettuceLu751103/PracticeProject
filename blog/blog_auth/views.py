@@ -1,6 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.core.mail import send_mail
-
+from django.urls import reverse
 # 如果需要使用 settings 中的 DEFAULT_FROM_EMAIL
 from django.conf import settings
 
@@ -25,8 +25,34 @@ def login(request):
 
 
 def register(request):
-
-    return render(request, "blog_auth/register.html")
+    print(request.method)
+    if request.method == 'GET':
+        print('get 請求')
+        return render(request, "blog_auth/register.html")
+    else:
+        print('post 請求')
+        print(request.POST)
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm = request.POST.get('confirm')
+        code = request.POST.get('code')
+        print(f'{username}, {email}, {password}, {confirm}, {code}')
+        # 先用POST進來的email, 查找出來的物件 captcha 比對 POST 進來的驗證碼, 成功就往下繼續驗證, 反之將原先的資訊返回
+        code_and_email_in_DB = CaptchaModel.objects.get(email = email)
+        if code_and_email_in_DB.captcha == code:
+            print(f'POST進來的驗證碼跟DB中的captcha相同')
+            #1 驗證碼比對成功, 繼續比對 user table 當中是否有相同的 email
+            
+            return redirect('/auth/login')
+        else:
+            #1 驗證碼比對失敗, 將原先 POST 進來的資料返回給 register.html
+            message = '驗證碼不相符, 請重新獲取'
+            return render(request, "blog_auth/register.html", {'username':username, 'email':email, 'password':password, 'confirm':confirm, 'code':code, 'message':message})
+        
+        # 在查找 user 表, 比對有沒有重複的 email, 若有, 則不註冊, 攜帶原先參數回到 register 頁面
+        # 若沒有, 則註冊, redirect 到 login 頁面
+        
 
 
 def send_test_email(request):
