@@ -22,11 +22,31 @@ from django.views.decorators.http import require_http_methods
 
 # Create your views here.
 
-
+@require_http_methods(['GET','POST'])
 def login(request):
-
-    return render(request, "blog_auth/login.html")
-
+    if request.method == 'GET':
+        print(f'Get 請求, 傳送 login 模板')
+        return render(request, "blog_auth/login.html")
+    else:
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        remember = request.POST.get('remember')
+        print(f'email:{email}, password:{password}')
+        try:
+            user = UserModel.objects.get(email=email)
+            print(user.email)
+            print(user.password)
+            print(remember)
+            if user.check_password(password):
+                print(f'使用者登入成功')
+                return redirect('/blog')
+            else:
+                message = '密碼錯誤!!!'
+                return render(request, "blog_auth/login.html", locals())
+        except UserModel.DoesNotExist:
+            message = '郵箱或密碼錯誤!!!'
+            return render(request, "blog_auth/login.html", locals())
+        
 @require_http_methods(['GET','POST'])
 def register(request):
     print(request.method)
