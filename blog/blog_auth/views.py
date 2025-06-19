@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.urls import reverse
 # 如果需要使用 settings 中的 DEFAULT_FROM_EMAIL
 from django.conf import settings
+from .models import UserModel
 
 # 要使用 JsonResponse
 from django.http.response import JsonResponse
@@ -16,6 +17,9 @@ import random
 # 引入 captcha model
 from .models import CaptchaModel
 
+# 引入http方法裝飾器
+from django.views.decorators.http import require_http_methods
+
 # Create your views here.
 
 
@@ -23,7 +27,7 @@ def login(request):
 
     return render(request, "blog_auth/login.html")
 
-
+@require_http_methods(['GET','POST'])
 def register(request):
     print(request.method)
     if request.method == 'GET':
@@ -43,15 +47,23 @@ def register(request):
         if code_and_email_in_DB.captcha == code:
             print(f'POST進來的驗證碼跟DB中的captcha相同')
             #1 驗證碼比對成功, 繼續比對 user table 當中是否有相同的 email
-            
+            exist = UserModel.objects.filter(email=email).exists()
+            if exist:
+                message = '郵箱已存在!!!'
+                return render(request, "blog_auth/register.html", {'username':username, 'email':email, 'password':password, 'confirm':confirm, 'code':code, 'message':message})
+            # 在查找 user 表, 比對有沒有重複的 email, 若有, 則不註冊, 攜帶原先參數回到 register 頁面
+            else:
+                new_user = UserModel(username=username, email=email)
+                new_user.set_password(password)
+                new_user.save()
+            # 若沒有, 則註冊, redirect 到 login 頁面
             return redirect('/auth/login')
         else:
             #1 驗證碼比對失敗, 將原先 POST 進來的資料返回給 register.html
             message = '驗證碼不相符, 請重新獲取'
             return render(request, "blog_auth/register.html", {'username':username, 'email':email, 'password':password, 'confirm':confirm, 'code':code, 'message':message})
         
-        # 在查找 user 表, 比對有沒有重複的 email, 若有, 則不註冊, 攜帶原先參數回到 register 頁面
-        # 若沒有, 則註冊, redirect 到 login 頁面
+        
         
 
 
