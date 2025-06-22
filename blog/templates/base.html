@@ -46,8 +46,34 @@
                     <input type="search" class="form-control form-control-dark text-bg-light" placeholder="Search..."
                         aria-label="Search">
                 </form>
-                    <a href="/auth/login" class="btn btn-outline-primary me-2" role="button" aria-disabled="true">Login</a>
-                    <a href="/auth/register" class="btn btn-outline-warning" role="button" aria-disabled="true">Register</a>
+                   {% if username %}
+          <div class="text-end">
+            <a
+              href="/auth/logout"
+              class="btn btn-outline-primary me-2"
+              role="button"
+              aria-disabled="true"
+              >Logout</a
+            >
+          </div>
+          {% else %}
+          <div class="text-end">
+            <a
+              href="login"
+              class="btn btn-outline-primary me-2"
+              role="button"
+              aria-disabled="true"
+              >Login</a
+            >
+            <a
+              href="register"
+              class="btn btn-outline-warning"
+              role="button"
+              aria-disabled="true"
+              >Register</a
+            >
+          </div>
+          {% endif %}
                 </div>
             </div>
         </div>

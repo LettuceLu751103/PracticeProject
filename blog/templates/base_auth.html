@@ -60,6 +60,17 @@
               aria-label="Search"
             />
           </form>
+          {% if username %}
+          <div class="text-end">
+            <a
+              href="/auth/logout"
+              class="btn btn-outline-primary me-2"
+              role="button"
+              aria-disabled="true"
+              >Logout</a
+            >
+          </div>
+          {% else %}
           <div class="text-end">
             <a
               href="login"
@@ -76,6 +87,7 @@
               >Register</a
             >
           </div>
+          {% endif %}
         </div>
       </div>
     </header>

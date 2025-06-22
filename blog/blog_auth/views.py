@@ -38,6 +38,8 @@ def login(request):
             print(user.password)
             print(remember)
             if user.check_password(password):
+                request.session['user_id'] = user.pk
+                request.session.modified = True
                 print(f'使用者登入成功')
                 return redirect('/blog')
             else:
@@ -82,10 +84,17 @@ def register(request):
             #1 驗證碼比對失敗, 將原先 POST 進來的資料返回給 register.html
             message = '驗證碼不相符, 請重新獲取'
             return render(request, "blog_auth/register.html", {'username':username, 'email':email, 'password':password, 'confirm':confirm, 'code':code, 'message':message})
-        
-        
-        
 
+
+@require_http_methods(['GET','POST'])  
+def logout(request):
+    if 'user_id' in request.session:
+        del request.session['user_id']
+        print('User ID removed from session')       
+        return render(request, "blog_auth/login.html", locals())
+    else:
+        print('當前沒有session')
+        return render(request, "blog_auth/login.html", locals())
 
 def send_test_email(request):
 
