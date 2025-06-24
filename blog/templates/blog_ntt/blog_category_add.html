@@ -1,0 +1,22 @@
+{% extends 'base_auth.html' %}
+
+{% block title %} Publish {% endblock %}
+{% block main %}
+
+<h1>新增博客類別</h1>
+<div class="mt-3">
+    <form action="/blog/blog_category_add" class="form-control" method="post">
+        {% csrf_token %}
+        <label for="subject" class="mt-2">分類</label>
+        <input type="text" class="form-control" placeholder="請輸入標題" name='category'>
+        <label for="subject" class="mt-2">描述</label>
+        <input type="text" class="form-control" placeholder="請輸入描述" name='description'>
+        <input type="hidden" class="form-control" placeholder="請輸入標題" name='userid' value={{ userid }}>
+        <div class="mt-2 text-end">
+            <button class="btn btn-primary">新增</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
