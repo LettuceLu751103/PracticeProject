@@ -1,6 +1,6 @@
 <template>
     <h3>Search Demo - 模糊搜索</h3>
-    <input type="text" v-model="searchData"> 
+    <input type="text" v-model.trim="searchData"> 
     <p>Search's String => {{ searchData }}</p>
     <ul>
         <template v-for="(item, index) in datalists" :key="index">
