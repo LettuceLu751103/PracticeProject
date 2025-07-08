@@ -1,7 +1,11 @@
 
 <template>
-    <div class="article">
-        <h3>Article</h3>
+    <div>
+        <h3  class="article">Article</h3>
+        <div>
+        <p>{{ message }}</p>
+        <p v-for="name in names">{{ name }}</p>
+        </div>
     </div>
 </template>
 
@@ -12,7 +16,8 @@ export default {
         return {
 
         }
-    }
+    },
+    props: ["message", 'names']
 }
 </script>
 
@@ -28,4 +33,6 @@ export default {
     margin-top: 50px;
     background: #999;
 }
+
+
 </style>

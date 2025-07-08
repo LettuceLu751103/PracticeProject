@@ -1,8 +1,8 @@
 <template>
     <div class="main">
         <h3>Main</h3>
-        <Article></Article>
-        <Article></Article>
+        <Article :message="message"></Article>
+        <Article :names="names"></Article>
     </div>
     
 </template>
@@ -12,7 +12,8 @@ import Article from './Article.vue'
 export default {
     data(){
         return {
-
+            message: '這是從Main組件傳遞過來的訊息',
+            names: ['Joy', 'Lettuce', 'Andrew', 'Brian']
         }
     },
     components: {
