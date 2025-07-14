@@ -4,12 +4,15 @@
         <ul>
             <li>
                 <div>
-                    <input type="checkbox"> 全選/全不選
+                    <input type="checkbox" v-model="isAllChecked" @change="allChangeHandler()"> 全選/全不選
                 </div>
             </li>
+            <template>
+                
+            </template>
             <li v-for="(result, index) in results" :key="result.id">
                 <div>
-                    <input type="checkbox" :name="result.title" :id="result.id" v-model="checkList" :value="result">
+                    <input type="checkbox" :name="result.title" :id="result.id" v-model="checkList" :value="result" @change="itemChangeHandler()">
                 </div>
                 <img :src="result.poster" alt="">
                 <div>
@@ -17,12 +20,12 @@
                     <p style="color: red;">價格 : {{ result.price }}</p>
                 </div>
                 <div>
-                    <button @click=""> - </button>
+                    <button @click="result.number--" :disabled="result.number===1"> - </button>
                     <input type="text" :value="result.number" style="text-align: center;">
-                    <button> + </button>
+                    <button @click="result.number++" :disabled="result.number === result.limit"> + </button>
                 </div>
                 <div>
-                    <button>Delete</button>
+                    <button @click="deleteHandler(index, result.id)">Delete</button>
                 </div>
             </li>
             <li>
@@ -44,7 +47,7 @@
 export default {
     data(){
         return {
-            total:0,
+            isAllChecked: false,
             checkList: [], // 勾選的商品列表
             results: [
                 {
@@ -92,11 +95,30 @@ export default {
     },
     methods: {
         sum(){
+            let total = 0
             for(let i=0; i<this.checkList.length; i++){
-                this.total = this.checkList[i].number * this.checkList[i].price
+                total += this.checkList[i].number * this.checkList[i].price
             }
-            console.log(this.total + '進到sum函數')
-            return this.total
+            return total
+        },
+        deleteHandler(index, id){
+            console.log(index, id)
+            this.results.splice(index,1)
+            // 同步更新 checkList
+            this.checkList = this.checkList.filter(item=>item.id !== id)
+            this.itemChangeHandler()
+            
+        },
+        allChangeHandler(){
+            this.checkList = this.isAllChecked ? this.results : []
+        },
+        itemChangeHandler(){
+            if(this.results.length === 0){
+                this.isAllChecked = false
+                return 
+            }
+            this.isAllChecked = this.checkList.length === this.results.length
+            
         }
     }
 }
