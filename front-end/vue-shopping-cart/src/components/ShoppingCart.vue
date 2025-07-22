@@ -1,5 +1,8 @@
 <template>
     <h3>ShoppingCart Demo</h3>
+    <p>歡迎 {{ myComputedName }} 回來!!!</p>
+    <p>原始資料屬性 : {{ myName }}</p>
+    <p>計算屬性產生結果 : {{ myComputedName }}</p>
     <div>
         <ul>
             <li>
@@ -47,6 +50,7 @@
 export default {
     data(){
         return {
+            myName: 'ethan',
             isAllChecked: false,
             checkList: [], // 勾選的商品列表
             results: [
@@ -119,6 +123,12 @@ export default {
             }
             this.isAllChecked = this.checkList.length === this.results.length
             
+        }
+    },
+    computed: {
+        myComputedName(){
+            this.myName = this.myName.substring(0, 1).toUpperCase() + this.myName.substring(1)
+            return this.myName
         }
     }
 }
