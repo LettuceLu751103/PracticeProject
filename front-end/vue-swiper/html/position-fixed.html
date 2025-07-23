@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position-Fixed</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        strong {
+            position: fixed;
+            top: 30%;
+            right: 10%;
+            border-radius: 5px;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        .item {
+            
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            bottom: 10%;
+            right: 3%;
+        }
+        .feedback {
+            width: 80px;
+            height: 40px;
+            border: 2px solid black;
+        }
+        .top {
+            margin-bottom: 10px;
+            width: 80px;
+            height: 40px;
+            border: 2px solid black;
+        }
+        .effect:hover {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Position Fixed Demo</h2>
+    <span>我是 span 元素</span>
+    <strong>距上30% 距右10%</strong>
+    <img src="../src/assets/02.webp" alt="" srcset="">
+    <div>我是 dive 元素</div>
+    <div class="item">
+        <div class="effect top">頂部</div>
+        <div class="effect feedback">反饋</div>
+    </div>
+    
+</body>
+</html>
