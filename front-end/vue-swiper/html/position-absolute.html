@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position-Absolute</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 600px;
+            background-color: grey;
+            position: relative;
+        }
+        .b1 {
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            right: -100px;
+            bottom: 100px;
+        }
+        .b2 {
+            background-color: red;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .span-in-b1 {
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .strong-out-of-box {
+            background-color: bisque;
+            position: absolute;
+            bottom: 0px;
+            width: 500px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Position Absolute Demo</h2>
+    <div class="box">
+        <div class="b1">
+            <!-- 行內元素如果使用了 position:absolute, 那麼就可以設置寬高 -->
+            <span class="span-in-b1">我是 span</span>
+        </div>
+        <div class="b2">
+                
+        </div>
+    </div>
+    <!-- 沒有鄰近定位祖先元素, 因此參照標準是視口 -->
+    <strong class="strong-out-of-box">我是 strong 元素</strong>
+</body>
+</html>
