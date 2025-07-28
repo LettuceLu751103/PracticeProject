@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-163</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .album-area {
+            position: relative;
+            background-color: aqua;
+        }
+        .img-area {
+            margin: 0;
+            padding: 0;
+            /* 將圖片下方多出來的區域消除 */
+            /* vertical-align: top; */
+            display: block;
+        }
+        .play-area {
+            background-color: grey;
+            position: absolute;
+            bottom: 0px;
+            width: 140px;
+            height: 27px;
+            opacity: 0.9;
+            font-size: 12px;
+            color: white;
+            padding-left: 5px;
+            padding-top: 3px;
+            box-sizing: border-box;
+        }
+        .by {
+            font-size: 12px;
+            color: grey;
+        }
+        .v {
+            width: 13px;
+            height: 13px;
+        }
+        .head-area {
+            background-color: blue;
+        }
+        .head-icon {
+            background-image: url('../src/assets/iconall.png');
+            background-position: 0 -24px;
+            display: inline-block;
+            width: 14px;
+            height: 11px;
+            position: relative;
+            top: 2px;
+            margin-right: 6px;
+        }
+        .song-link {
+            text-decoration: none;
+            color: #000;
+        }
+        .song-link:hover {
+            text-decoration: underline;
+            color: blue;
+            margin-top:10px;
+        }
+        .play-icon {
+            background-image: url('../src/assets/iconall.png');
+            background-position: 0 0;
+            width: 16px;
+            height: 17px;
+            position: absolute;
+            display: inline-block;
+            top: 0px;
+            bottom: 0px;
+            margin: auto 0;
+            right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="album-area">
+            <a href=""><img class="img-area" src="../src/assets/民謠盛宴-01.jpg" alt=""></a>
+            <div class="play-area">
+                <i class="head-icon"></i>
+                <span class="count">50萬</span>
+                <a href=""><i class="play-icon"></i></a>
+            </div>
+        </div>
+        <div><a class="song-link" href="">索尼經典老歌</a></div>
+        <div class="by">by 雲音樂經典專區 <img class="v" src="../src/assets/v.png" alt=""></div>
+    </div>
+</body>
+</html>
