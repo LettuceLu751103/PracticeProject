@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid grey;
+            border-radius: 10px;
+            position: fixed;
+            line-height: 200px;
+            text-align: center;
+        }
+        .black-box {
+            background-color: black;
+            opacity: 0.8;
+            color: white;
+            top: 100px;
+            left: 100px;
+            z-index: 15;
+        }
+        .white-box {
+            background-color: aquamarine;
+            opacity: 0.8;
+            top: 150px;
+            left: 150px;
+            z-index: -1;
+        }
+        .red-box {
+            background-color: red;
+            opacity: 0.8;
+            top: 200px;
+            left: 200px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <h2>z-indxe DEMO</h2>
+    <div class="container">
+        <div class="box black-box">黑盒子</div>
+        <div class="box white-box">半透明藍盒子</div>
+        <div class="box red-box">紅盒子</div>
+    </div>
+    
+</body>
+</html>
