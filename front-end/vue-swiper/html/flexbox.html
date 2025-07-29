@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+            border: 2px solid grey;
+            line-height: 50px;
+            text-align: center;
+            
+        }
+        .box1 {
+            background-color: red;
+        }
+        .box2 {
+            background-color: burlywood;
+        }
+        .box3 {
+            background-color: gold;
+        }
+        .box4 {
+            background-color: greenyellow;
+        }
+        .container1 {
+            display: flex;
+            padding: 5px;
+            border: 2px solid black;
+            justify-content: start;
+            margin-bottom:20px;
+        }
+        .container2 {
+            display: flex;
+            padding: 5px;
+            border: 2px solid black;
+            justify-content: end;
+            margin-bottom:20px;
+        }
+        .container3 {
+            display: flex;
+            padding: 5px;
+            border: 2px solid black;
+            justify-content: space-evenly;
+            margin-bottom:20px;
+        }
+        .container4 {
+            display: flex;
+            padding: 5px;
+            border: 2px solid black;
+            justify-content: space-between;
+            margin-bottom:20px;
+        }
+        .container5 {
+            display: flex;
+            padding: 5px;
+            border: 2px solid black;
+            justify-content: space-around;
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Flexbox 佈局</h2>
+    <h3>justify-content: start</h3>
+    <div class="container1">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+        <div class="box box4">盒子4</div>
+    </div>
+    <h3>justify-content: end</h3>
+    <div class="container2">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+        <div class="box box4">盒子4</div>
+    </div>
+    <h3>justify-content: space-evenly</h3>
+    <div class="container3">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+        <div class="box box4">盒子4</div>
+    </div>
+    <h3>justify-content: space-between</h3>
+    <div class="container4">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+        <div class="box box4">盒子4</div>
+    </div>
+    <h3>justify-content: space-around</h3>
+    <div class="container5">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+        <div class="box box4">盒子4</div>
+    </div>
+</body>
+</html>
