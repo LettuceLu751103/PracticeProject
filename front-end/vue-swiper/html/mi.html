@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5F5;
+        }
+        .header {
+            display: flex;
+            background-color: #333333;;
+            width: 1266px;
+            height: 40px;
+            line-height: 40px;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+        .header-left {
+            display: flex;
+        }
+        .header-right {
+            display: flex;
+            justify-content: end;
+            
+        }
+        .left-item {
+
+            font-size: 12px;
+            
+        }
+        .left-item-sep {
+            margin: 0 5px;
+            display:inline-block;
+            color: #424242;
+        }
+        .left-item a {
+            color: #B0B0B0;
+            text-decoration: none;
+        }
+        .left-item a:hover {
+            color: #FFFFFF;
+        }
+        .right-item {
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        .right-item a {
+            color: #B0B0B0;
+            text-decoration: none;
+        }
+        .right-item a:hover {
+            color: #FFFFFF;
+        }
+        .nav {
+            width: 1266px;
+            height: 100px;
+            line-height: 100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .left-nav {
+            height: 100px;
+            line-height: 100px;
+            display: flex;
+            align-items: center;
+        }
+        .left-nav-a {
+            width: 56px;
+            height: 56px;
+
+        }
+        .left-nav-img {
+            width: 56px;
+            height: 56px;
+
+        }
+        .center-nav {
+            display: flex;
+            width: 700px;
+            justify-content: space-evenly;
+        }
+        .center-nav a {
+            text-decoration: none;
+            color: #424242;
+        }
+        .center-nav a:hover {
+            color: #FF6700
+        }
+        
+        .right-nav {
+            display: flex;
+            align-items: center;
+        }
+        .search1 {
+            width: 245px;
+            height: 50px;
+        }
+        .search2 {
+            width: 50px;
+            height: 50px;
+        }
+        .container {
+            width: 1266px;
+            height: 460px;
+            margin:0 auto;
+            display: flex;
+        }
+        .left-list ul{
+            
+            padding: 0;
+            margin: 0;
+        }
+        .left-list ul li{
+            list-style: none;
+            width: 234px;
+            height: 42px;
+            background-color: #A3A09F;
+            padding: 0;
+            margin: 0;
+        }
+        .right-img img {
+            width: 1032px;
+            height: 462px;
+        }
+        .banner {
+            margin:0 auto;
+            width: 1266px;
+        }
+        .banner img {
+            width: 1266px;
+            
+            height: 120px;
+        }
+        .container3 {
+            width: 1266px;
+            height: 58px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container3 a {
+            text-decoration: none;
+            color: #424242;
+        }
+        .container3 a:hover {
+            text-decoration: none;
+            color: #FF6700;
+        }
+        .container4 {
+            display: flex;
+            width: 1266px;
+            margin: 0 auto;
+        }
+        .container4-left {
+            width: 234px;
+            height: 614px;
+        }
+        .container4-right {
+            width: 992px;
+            height: 614px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .container4-right-img {
+            width: 234px;
+            height: 300px;
+            background-color: white;
+            text-align: center;
+        }
+        .container4-right-img .desc {
+            font-size: 12px;
+            color: grey;
+        }
+        .container4-right-img .price {
+            font-size: 12px;
+            color: #FF6700;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="left-item"><a href="">小米官網</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">小米商城</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">小米彭湃OS</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">小米汽車</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">雲服務</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">IoT</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">有品</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">小愛開放平台</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">資質證照</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">協議規則</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">下載app</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="left-item"><a href="">Select Location</a></div>
+        </div>
+        <div class="header-right">
+            <div class="right-item"><a href="">登陸</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="right-item"><a href="">註冊</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="right-item"><a href="">消息通知</a></div>
+            <span class="left-item-sep">|</span>
+            <div class="right-item"><a href="">購物車</a></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="left-nav">
+            <a class="left-nav-a" href="#"><img class="left-nav-img" src="../src/assets/mi-logo.svg" alt=""></a>
+        </div>
+        <div class="center-nav">
+            <div><a href="">Xiaomi手機</a></div>
+            <div><a href="">REDMI手機</a></div>
+            <div><a href="">電視</a></div>
+            <div><a href="">筆記本</a></div>
+            <div><a href="">平板</a></div>
+            <div><a href="">家電</a></div>
+            <div><a href="">路由器</a></div>
+            <div><a href="">服務中心</a></div>
+            <div><a href="">社區</a></div>
+        </div>
+        <div class="right-nav">
+            <input class="search1" type="text" value="">
+            <input class="search2" type="text">
+        </div>
+    </div>
+    <div class="container">
+        <div class="left-list">
+            <ul>
+                <li>手機</li>
+                <li>電視</li>
+                <li>家電</li>
+                <li>筆記本 平板 顯示器</li>
+                <li>出行 穿戴</li>
+                <li>耳機 音箱</li>
+                <li>健康</li>
+                <li>兒童</li>
+                <li>生活 箱包</li>
+                <li>智能 路由器</li>
+                <li>電源 配件</li>
+            </ul>
+        </div>
+        <div class="right-img">
+            <img src="../src/assets/投影.jpg" alt="">
+        </div>
+    </div>
+    <div class="banner">
+        <img src="../src/assets/banner.webp" alt="">
+    </div>
+    <div class="container3">
+        <h2>手機</h2>
+        <div>
+            <a href="#">查看更多 ></a>
+        </div>
+    </div>
+    <div class="container4">
+        <div class="container4-left">
+            <img src="../src/assets/img01.webp" alt="">
+        </div>
+        <div class="container4-right">
+            <div class="container4-right-img">
+                <img src="../src/assets/img02.webp" alt="">
+                <div class="title">Xiaomi MIX Flip 2</div>
+                <div class="desc">4.01英吋多功能超大外屏</div>
+                <div class="price">5999元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img03.webp" alt="">
+                <div class="title">REDMI K80 至尊版</div>
+                <div class="desc">天機 9400+7410mAh超長續航大師</div>
+                <div class="price">2599元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img04.webp" alt="">
+                <div class="title">Xiaomi 15S Pro</div>
+                <div class="desc">小米 15周年特別設計</div>
+                <div class="price">5499元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img05.webp" alt="">
+                <div class="title">Xiaomi Civi 5 Pro</div>
+                <div class="desc">萊卡光學 Summilux 高速鏡頭 | 6000</div>
+                <div class="price">2999元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img02.webp" alt="">
+                <div class="title">Xiaomi MIX Flip 2</div>
+                <div class="desc">4.01英吋多功能超大外屏</div>
+                <div class="price">5999元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img03.webp" alt="">
+                <div class="title">REDMI K80 至尊版</div>
+                <div class="desc">天機 9400+7410mAh超長續航大師</div>
+                <div class="price">2599元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img04.webp" alt="">
+                <div class="title">Xiaomi 15S Pro</div>
+                <div class="desc">小米 15周年特別設計</div>
+                <div class="price">5499元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img05.webp" alt="">
+                <div class="title">Xiaomi Civi 5 Pro</div>
+                <div class="desc">萊卡光學 Summilux 高速鏡頭 | 6000</div>
+                <div class="price">2999元起</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container3">
+        <h2>智能穿戴</h2>
+        <div>
+            <a href="#">查看更多 ></a>
+        </div>
+    </div>
+    <div class="container4">
+        <div class="container4-left">
+            <img src="../src/assets/img11.webp" alt="">
+        </div>
+        <div class="container4-right">
+            <div class="container4-right-img">
+                <img src="../src/assets/img02.webp" alt="">
+                <div class="title">Xiaomi MIX Flip 2</div>
+                <div class="desc">4.01英吋多功能超大外屏</div>
+                <div class="price">5999元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img03.webp" alt="">
+                <div class="title">REDMI K80 至尊版</div>
+                <div class="desc">天機 9400+7410mAh超長續航大師</div>
+                <div class="price">2599元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img04.webp" alt="">
+                <div class="title">Xiaomi 15S Pro</div>
+                <div class="desc">小米 15周年特別設計</div>
+                <div class="price">5499元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img05.webp" alt="">
+                <div class="title">Xiaomi Civi 5 Pro</div>
+                <div class="desc">萊卡光學 Summilux 高速鏡頭 | 6000</div>
+                <div class="price">2999元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img02.webp" alt="">
+                <div class="title">Xiaomi MIX Flip 2</div>
+                <div class="desc">4.01英吋多功能超大外屏</div>
+                <div class="price">5999元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img03.webp" alt="">
+                <div class="title">REDMI K80 至尊版</div>
+                <div class="desc">天機 9400+7410mAh超長續航大師</div>
+                <div class="price">2599元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img04.webp" alt="">
+                <div class="title">Xiaomi 15S Pro</div>
+                <div class="desc">小米 15周年特別設計</div>
+                <div class="price">5499元起</div>
+            </div>
+            <div class="container4-right-img">
+                <img src="../src/assets/img05.webp" alt="">
+                <div class="title">Xiaomi Civi 5 Pro</div>
+                <div class="desc">萊卡光學 Summilux 高速鏡頭 | 6000</div>
+                <div class="price">2999元起</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
